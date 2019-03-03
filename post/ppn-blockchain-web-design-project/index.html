@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | Newloud</title>
+<title>PPN Blockchain Web Design Project | Newloud</title>
 <meta name="description" content="Jiangnan&#39;s Design Notes">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -11,6 +11,12 @@
 <link rel="shortcut icon" href="https://jojojonan.github.io/favicon.ico">
 <link rel="stylesheet" href="https://jojojonan.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -75,40 +81,35 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
+          <div class="post-detail">
+            <h2 class="post-title">PPN Blockchain Web Design Project</h2>
+            <div class="post-date">2019-03-03</div>
+            
+            <div class="post-content">
+              <p><img src="https://jojojonan.github.io/post-images/1551615166645.jpg" alt=""></p>
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
+            </div>
             
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2019</h2>
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://jojojonan.github.io/post/web-ji-suan-qi-xiao-zu-jian-you-hua">
+                  <h3 class="post-title">
+                    Web 计算器小组件优化
+                  </h3>
+                </a>
+              </div>
+            
+
+            
               
-                
-                  <article class="post">
-                    <a href="https://jojojonan.github.io/post/ppn-blockchain-web-design-project">
-                      <h2 class="post-title">
-                        PPN Blockchain Web Design Project
-                      </h2>
-                    </a>
-                  </article>
-                
+                <div id="gitalk-container" data-aos="fade-in"></div>
               
-                
-                  <article class="post">
-                    <a href="https://jojojonan.github.io/post/web-ji-suan-qi-xiao-zu-jian-you-hua">
-                      <h2 class="post-title">
-                        Web 计算器小组件优化
-                      </h2>
-                    </a>
-                  </article>
-                
+
               
             
+
           </div>
-
-          <div class="pagination-container">
-  
-  
-</div>
 
         </div>
       </div>
@@ -130,6 +131,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'bb09af80d68517997922',
+        clientSecret: 'e73179a879a71cc6ba21a417df7a92ddcb517a75',
+        repo: 'jojojonan.github.io',
+        owner: 'jojojonan',
+        admin: ['jojojonan'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
