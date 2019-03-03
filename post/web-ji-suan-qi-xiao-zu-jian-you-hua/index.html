@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Web 计算器小组件优化 | Newloud</title>
+<meta name="description" content="Jiangnan&#39;s Design Notes">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="shortcut icon" href="https://jojojonan.github.io/favicon.ico">
+<link rel="stylesheet" href="https://jojojonan.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://jojojonan.github.io">
+        <img src="https://jojojonan.github.io/images/avatar.png" class="site-logo">
+        <h1 class="site-title">Newloud</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      Jiangnan's Design Notes
+    </div>
+    <div class="site-footer">
+      Think Different / Keep Unique
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Web 计算器小组件优化</h2>
+            <div class="post-date">2019-03-02</div>
+            
+              <div class="feature-container" style="background-image: url('https://jojojonan.github.io/post-images/web-ji-suan-qi-xiao-zu-jian-you-hua.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <p><img src="https://jojojonan.github.io/post-images/1551609011007.jpg" alt=""></p>
+<h1 id="01 前言">01 前言</h1><p>小组件在 Web 设计中容易被忽略，老旧的组件有易用性差，视觉风格与主产品风格不统一等缺点。<br>18年在做 web 产品的时候遇到了一个计算器组件改版需求，下面是我的改版思路。</p>
+<h1 id="02 发现问题">02 发现问题</h1><p>旧版计算器如图。<br><img src="https://jojojonan.github.io/post-images/1551612886222.png" alt=""><br>*旧版计算器</p>
+<p>旧版计算器的样式版本落后于当前的网站，输入框、滑柄等控件风格陈旧。<br><img src="https://jojojonan.github.io/post-images/1551613114264.png" alt=""><br>*旧版计算器的问题</p>
+<h1 id="03 改版探索">03 改版探索</h1><p>参考了几个交易所网站的计算器，但观察后发现，这些网站的计算器各式各样，都是根据自家产品订制的，没有统一的解决方法。<br><img src="https://jojojonan.github.io/post-images/1551613199041.png" alt=""><br>*竞品网站的计算器并没有统一解法</p>
+<p>接下来思考如何从视觉上改版。<br>提取“主站”的视觉元素：</p>
+<ul>
+<li>纵向标签</li>
+<li>更现代的输入框、滑柄等控件<br><img src="https://jojojonan.github.io/post-images/1551613281384.png" alt=""><br>*提取主站的视觉元素</li>
+</ul>
+<p>使用纵向 tab，合并 “Side” 一行到输入区域，简化了区域划分且更符合逻辑。<br><img src="https://jojojonan.github.io/post-images/1551613335572.png" alt=""><br><img src="https://jojojonan.github.io/post-images/1551613343941.png" alt=""><br>*重新布局</p>
+<h1 id="04 改版设计">04 改版设计</h1><p>新的布局已经出来，接下来细化视觉。颜色沿用主站主视觉蓝色，增加了更亮和更浅的蓝色。使用和主站相同的表格样式和设计组件。<br><img src="https://jojojonan.github.io/post-images/1551613438206.png" alt=""><br>*改版后的计算器，采用新布局和主站相同的设计组件</p>
+<h1 id="05 最终效果">05 最终效果</h1><p>上图<br><img src="https://jojojonan.github.io/post-images/1551613514199.gif" alt=""><br>*最终版效果</p>
+<h1 id="06 总结">06 总结</h1><p>在这次计算器小改版中我运用了设计体系的思维和方法，使改版迅速合理地完成。感谢 c 译版《设计体系》给我的启发。感谢你的阅读，欢迎转发。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://jojojonan.github.io/tag/eBnmffGwj" class="tag">
+                    设计思考
+                  </a>
+                
+              </div>
+            
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'bb09af80d68517997922',
+        clientSecret: 'e73179a879a71cc6ba21a417df7a92ddcb517a75',
+        repo: 'jojojonan.github.io',
+        owner: 'jojojonan',
+        admin: ['jojojonan'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
