@@ -1,114 +1,145 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Newloud</title>
+    <meta charset="utf-8" >
+
+<title>文章归档 | Newloud</title>
+<meta name="description" content="Jiangnan&#39;s Design Notes">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 <link rel="shortcut icon" href="https://jojojonan.github.io/favicon.ico">
 <link rel="stylesheet" href="https://jojojonan.github.io/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://jojojonan.github.io">
-  <img class="avatar" src="https://jojojonan.github.io/images/avatar.png" alt="" width="80px" height="80px">
-  </a>
-  <h1 class="site-title">
-    Newloud
-  </h1>
-  <p class="site-description">
-    Jiangnan's Design Notes
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://jojojonan.github.io">
+        <img src="https://jojojonan.github.io/images/avatar.png" class="site-logo">
+        <h1 class="site-title">Newloud</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-        <a href="/archives" class="menu">
-          归档
-        </a>
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
       
-    
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
       
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      Jiangnan's Design Notes
+    </div>
+    <div class="site-footer">
+      Think Different / Keep Unique
+    </div>
   </div>
 </div>
 
-    
-        
 
-<div class="archives-container">
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          
+
+          <h2 class="archives-title">文章归档</h2>
+          <div class="archives-container">
+            
+              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2019</h2>
+              
+                
+                  <article class="post">
+                    <a href="https://jojojonan.github.io/post/web-ji-suan-qi-xiao-zu-jian-you-hua">
+                      <h2 class="post-title">
+                        Web 计算器小组件优化
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+                
+              
+            
+              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2018</h2>
+              
+                
+              
+                
+                  <article class="post">
+                    <a href="https://jojojonan.github.io/post/ppn-blockchain-web-design-project">
+                      <h2 class="post-title">
+                        PPN Blockchain Web Design Project
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+            
+          </div>
+
+          <div class="pagination-container">
   
-    <h2 class="year">2019</h2>
-    
-      
-        <article class="post">
-          <a href="https://jojojonan.github.io/post/web-ji-suan-qi-xiao-zu-jian-you-hua">
-            <h2 class="post-title">
-              Web 计算器小组件优化
-              <small>2019-03-02</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-    
-  
-    <h2 class="year">2018</h2>
-    
-      
-    
-      
-        <article class="post">
-          <a href="https://jojojonan.github.io/post/ppn-blockchain-web-design-project">
-            <h2 class="post-title">
-              PPN Blockchain Web Design Project
-              <small>2018-12-22</small>
-            </h2>
-          </a>
-        </article>
-      
-    
   
 </div>
 
-    
-        <div class="pagination-container">
-  
-  
-</div>
-
-    
-        <div class="site-footer">
-  Think Different / Keep Unique
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
-
+        </div>
       </div>
     </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
   </body>
 </html>
