@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    
+<meta charset="utf-8" >
 
 <title>Web 计算器小组件优化 | Newloud</title>
 <meta name="description" content="Jiangnan&#39;s Design Notes">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://jojojonan.github.io/favicon.ico?v=1556030512763">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="shortcut icon" href="https://jojojonan.github.io/favicon.ico">
 <link rel="stylesheet" href="https://jojojonan.github.io/styles/main.css">
 
 
@@ -20,86 +21,84 @@
 
   
 
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://jojojonan.github.io">Newloud</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://jojojonan.github.io">
+        <img class="avatar" src="https://jojojonan.github.io/images/avatar.png" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://jojojonan.github.io">
+        <h1 class="site-title">Newloud</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
     </div>
   </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>Web 计算器小组件优化</h1>
-            <p class="article-meta">
-              2019-03-02
-              
-                <a href="https://jojojonan.github.io/tag/eBnmffGwj" class="badge secondary">
-                  设计思考
-                </a>
-              
-            </p>
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          <h2 class="post-title">Web 计算器小组件优化</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-03-02</span>
             
-              <img src="https://jojojonan.github.io/post-images/web-ji-suan-qi-xiao-zu-jian-you-hua.jpg" alt="Web 计算器小组件优化">
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://jojojonan.github.io/tag/eBnmffGwj">
+                    设计思考
+                    
+                  </a>
+                
+              </span>
             
-            <div class="post-content">
-              <h1 id="01-前言">01 前言</h1>
+          </div>
+          <div class="post-content">
+            <h1 id="01-前言">01 前言</h1>
 <p>小组件在 Web 设计中容易被忽略，老旧的组件有易用性差，视觉风格与主产品风格不统一等缺点。
 18年在做 web 产品的时候遇到了一个计算器组件改版需求，下面是我的改版思路。</p>
 <h1 id="02-发现问题">02 发现问题</h1>
@@ -136,113 +135,45 @@
 <h1 id="06-总结">06 总结</h1>
 <p>在这次计算器小改版中我运用了设计体系的思维和方法，使改版迅速合理地完成。感谢 c 译版《设计体系》给我的启发。感谢你的阅读，欢迎转发。</p>
 
-            </div>
-          </article>
+          </div>
         </div>
-        <div class="paper" data-aos="fade-in">
-          
-            <div class="next-post">
-              <div class="next">
-                下一篇
-              </div>
-              <a href="https://jojojonan.github.io/post/ppn-blockchain-web-design-project">
-                <h3 class="post-title">
-                  PPN Blockchain Web Design Project
-                </h3>
-              </a>
-            </div>
-          
-        </div>
-        
-          
-            <div class="paper" data-aos="fade-in">
-              <div id="gitalk-container"></div>
-            </div>
-          
 
-          
         
+          <div class="next-post">
+            <a class="purple-link" href="https://jojojonan.github.io/post/ppn-blockchain-web-design-project">
+              <h3 class="post-title">
+                下一篇：PPN Blockchain Web Design Project
+              </h3>
+            </a>
+          </div>
+          
       </div>
 
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://jojojonan.github.io/images/avatar.png?v=1556030512763" class="no-responsive avatar">
-    <div class="text-muted">Jiangnan's Design Notes</div>
-    <div class="social-container">
       
         
-      
+          <div id="gitalk-container"></div>
+        
+
         
       
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://jojojonan.github.io/post/web-ji-suan-qi-xiao-zu-jian-you-hua">Web 计算器小组件优化</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://jojojonan.github.io/post/about">关于</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://jojojonan.github.io/post/ppn-blockchain-web-design-project">PPN Blockchain Web Design Project</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://jojojonan.github.io/post/hello-hve-notes">Hello Hve Notes</a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://jojojonan.github.io/tag/eBnmffGwj" class="badge warning">
-          设计思考
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Think Different / Keep Unique
-  </div>
+
+      <div class="site-footer">
+  <div class="slogan">Jiangnan's Design Notes</div>
+  Think Different / Keep Unique
 </div>
 
 
     </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
