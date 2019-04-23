@@ -1,12 +1,15 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    
+<meta charset="utf-8" >
 
 <title>Hello Hve Notes | Newloud</title>
 <meta name="description" content="Jiangnan&#39;s Design Notes">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="shortcut icon" href="https://jojojonan.github.io/favicon.ico">
 <link rel="stylesheet" href="https://jojojonan.github.io/styles/main.css">
@@ -22,74 +25,70 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
 
   </head>
   <body>
     <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://jojojonan.github.io">
-        <img src="https://jojojonan.github.io/images/avatar.png" class="site-logo">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://jojojonan.github.io">
+        <img class="avatar" src="https://jojojonan.github.io/images/avatar.png" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://jojojonan.github.io">
         <h1 class="site-title">Newloud</h1>
       </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
     </div>
-    <div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
       
         
-          <a href="/" class="site-nav">
+          <a href="/" class="menu purple-link">
             首页
           </a>
         
       
         
-          <a href="/archives" class="site-nav">
+          <a href="/archives" class="menu purple-link">
             归档
           </a>
         
       
         
-          <a href="/tags" class="site-nav">
+          <a href="/tags" class="menu purple-link">
             标签
           </a>
         
       
         
-          <a href="/post/about" class="site-nav">
+          <a href="/post/about" class="menu purple-link">
             关于
           </a>
         
       
     </div>
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="site-description">
-      Jiangnan's Design Notes
-    </div>
-    <div class="site-footer">
-      Think Different / Keep Unique
-    </div>
-  </div>
-</div>
+</transition>
 
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">Hello Hve Notes</h2>
-            <div class="post-date">2018-12-12</div>
+      <div class="content-container">
+        <div class="post-detail">
+          <h2 class="post-title">Hello Hve Notes</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2018-12-12</span>
             
-              <div class="feature-container" style="background-image: url('https://jojojonan.github.io/post-images/hello-hve-notes.png')">
-              </div>
-            
-            <div class="post-content">
-              <p>👏  欢迎使用 <strong>Hve Notes</strong> ！</p>
+          </div>
+          <div class="post-content">
+            <p>👏  欢迎使用 <strong>Hve Notes</strong> ！</p>
 <p>Github: <a href="https://github.com/hve-notes/hve-notes">Hve Notes</a><br>
 项目主页: <a href="http://hvenotes.fehey.com/">Hve Notes</a><br>
 示例网站: <a href="http://fehey.com/">示例网站一</a> <a href="http://hve-notes.github.io">示例网站二</a></p>
@@ -109,29 +108,28 @@
 <p>尽情发挥你的才华吧！</p>
 <p>😘 Enjoy~</p>
 
-            </div>
-            
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
           </div>
-
         </div>
+
+        
       </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Jiangnan's Design Notes</div>
+  Think Different / Keep Unique
+</div>
+
+
     </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
