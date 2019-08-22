@@ -2,11 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jojojonan.github.io</id>
     <title>Newloud</title>
-    <updated>2019-08-22T13:32:51.588Z</updated>
+    <updated>2019-08-22T13:39:17.525Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jojojonan.github.io"/>
     <link rel="self" href="https://jojojonan.github.io/atom.xml"/>
-    <subtitle>Jiangnan&apos;s Design Notes</subtitle>
+    <subtitle>Jiangnan&apos;s Design Notes
+这里是江南的设计自耕田</subtitle>
     <logo>https://jojojonan.github.io/images/avatar.png</logo>
     <icon>https://jojojonan.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Newloud</rights>
