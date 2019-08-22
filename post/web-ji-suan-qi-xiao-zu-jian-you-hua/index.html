@@ -1,223 +1,290 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Newloud</title>
+<meta name="description" content="Jiangnan's Design Notes" />
+<link rel="shortcut icon" href="https://jojojonan.github.io/favicon.ico?v=1566480523862">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-<title>Web 计算器小组件优化 | Newloud</title>
-<meta name="description" content="Jiangnan&#39;s Design Notes">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://jojojonan.github.io/favicon.ico?v=1559463727909">
 <link rel="stylesheet" href="https://jojojonan.github.io/styles/main.css">
-
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="alternate" type="application/atom+xml" title="Newloud - Atom Feed" href="https://jojojonan.github.io/atom.xml">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://jojojonan.github.io">
-        <img src="https://jojojonan.github.io/images/avatar.png?v=1559463727909" class="site-logo">
-        <h1 class="site-title">Newloud</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://jojojonan.github.io">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://jojojonan.github.io/images/avatar.png?v=1566480523862" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Newloud</h1>
       </div>
-    </div>
-    <div>
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li><a href="#01-%E5%89%8D%E8%A8%80">01 前言</a></li>
+<li><a href="#02-%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98">02 发现问题</a></li>
+<li><a href="#03-%E6%94%B9%E7%89%88%E6%8E%A2%E7%B4%A2">03 改版探索</a></li>
+<li><a href="#04-%E6%94%B9%E7%89%88%E8%AE%BE%E8%AE%A1">04 改版设计</a></li>
+<li><a href="#05-%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C">05 最终效果</a></li>
+<li><a href="#06-%E6%80%BB%E7%BB%93">06 总结</a></li>
+</ul>
+
+          </div>
+        </div>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      Jiangnan's Design Notes
-    </div>
-    <div class="site-footer">
-      Think Different / Keep Unique
     </div>
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">Web 计算器小组件优化</h2>
-            <div class="post-date">2019-03-02</div>
-            
-              <div class="feature-container" style="background-image: url('https://jojojonan.github.io/post-images/web-ji-suan-qi-xiao-zu-jian-you-hua.jpg')">
-              </div>
-            
-            <div class="post-content">
-              <h1 id="01-前言">01 前言</h1>
-<p>小组件在 Web 设计中容易被忽略，老旧的组件有易用性差，视觉风格与主产品风格不统一等缺点。
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Think Different / Keep Unique</div>
+    <a class="rss" href="https://jojojonan.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">Web 计算器小组件优化</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-03-02 / 1 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://jojojonan.github.io/post-images/web-ji-suan-qi-xiao-zu-jian-you-hua.jpg" alt="">
+        
+        <div class="post-content yue">
+          <h1 id="01-前言">01 前言</h1>
+<p>小组件在 Web 设计中容易被忽略，老旧的组件有易用性差，视觉风格与主产品风格不统一等缺点。<br>
 18年在做 web 产品的时候遇到了一个计算器组件改版需求，下面是我的改版思路。</p>
 <h1 id="02-发现问题">02 发现问题</h1>
-<p>旧版计算器如图。
-<img src="https://jojojonan.github.io/post-images/1551612886222.png" alt="">
+<p>旧版计算器如图。<br>
+<img src="https://jojojonan.github.io/post-images/1551612886222.png" alt=""><br>
 <em>旧版计算器</em></p>
-<p>旧版计算器的样式版本落后于当前的网站，输入框、滑柄等控件风格陈旧。
-<img src="https://jojojonan.github.io/post-images/1551613114264.png" alt="">
+<p>旧版计算器的样式版本落后于当前的网站，输入框、滑柄等控件风格陈旧。<br>
+<img src="https://jojojonan.github.io/post-images/1551613114264.png" alt=""><br>
 <em>旧版计算器的问题</em></p>
 <h1 id="03-改版探索">03 改版探索</h1>
-<p>参考了几个交易所网站的计算器，但观察后发现，这些网站的计算器各式各样，都是根据自家产品订制的，没有统一的解决方法。
-<img src="https://jojojonan.github.io/post-images/1551613199041.png" alt="">
+<p>参考了几个交易所网站的计算器，但观察后发现，这些网站的计算器各式各样，都是根据自家产品订制的，没有统一的解决方法。<br>
+<img src="https://jojojonan.github.io/post-images/1551613199041.png" alt=""><br>
 <em>竞品网站的计算器并没有统一解法</em></p>
-<p>接下来思考如何从视觉上改版。
+<p>接下来思考如何从视觉上改版。<br>
 提取“主站”的视觉元素：</p>
 <ul>
 <li>纵向标签</li>
-<li>更现代的输入框、滑柄等控件
-<img src="https://jojojonan.github.io/post-images/1551613281384.png" alt="">
+<li>更现代的输入框、滑柄等控件<br>
+<img src="https://jojojonan.github.io/post-images/1551613281384.png" alt=""><br>
 <em>提取主站的视觉元素</em></li>
 </ul>
-<p>使用纵向 tab，合并 “Side” 一行到输入区域，简化了区域划分且更符合逻辑。
-<img src="https://jojojonan.github.io/post-images/1551613335572.png" alt="">
-<img src="https://jojojonan.github.io/post-images/1551613343941.png" alt="">
+<p>使用纵向 tab，合并 “Side” 一行到输入区域，简化了区域划分且更符合逻辑。<br>
+<img src="https://jojojonan.github.io/post-images/1551613335572.png" alt=""><br>
+<img src="https://jojojonan.github.io/post-images/1551613343941.png" alt=""><br>
 <em>重新布局</em></p>
 <h1 id="04-改版设计">04 改版设计</h1>
-<p>新的布局已经出来，接下来细化视觉。颜色沿用主站主视觉蓝色，增加了更亮和更浅的蓝色。使用和主站相同的表格样式和设计组件。
-<img src="https://jojojonan.github.io/post-images/1551613438206.png" alt="">
+<p>新的布局已经出来，接下来细化视觉。颜色沿用主站主视觉蓝色，增加了更亮和更浅的蓝色。使用和主站相同的表格样式和设计组件。<br>
+<img src="https://jojojonan.github.io/post-images/1551613438206.png" alt=""><br>
 <em>改版后的计算器，采用新布局和主站相同的设计组件</em></p>
 <h1 id="05-最终效果">05 最终效果</h1>
-<p>上图
-<img src="https://jojojonan.github.io/post-images/1551613514199.gif" alt="">
+<p>上图<br>
+<img src="https://jojojonan.github.io/post-images/1551613514199.gif" alt=""><br>
 <em>最终版效果</em></p>
 <h1 id="06-总结">06 总结</h1>
 <p>在这次计算器小改版中我运用了设计体系的思维和方法，使改版迅速合理地完成。感谢 c 译版《设计体系》给我的启发。感谢你的阅读，欢迎转发。</p>
 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://jojojonan.github.io/tag/eBnmffGwj" class="tag">
-                    设计思考
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://jojojonan.github.io/post/ppn-blockchain-web-design-project">
-                  <h3 class="post-title">
-                    PPN Blockchain Web Design Project
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
-          </div>
-
         </div>
-      </div>
-    </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://jojojonan.github.io/tag/eBnmffGwj">
+            <span class="flex-auto">设计思考</span>
+          </a>
+        
 
-<script type="application/javascript">
 
-AOS.init();
+        <div class="flex justify-between py-8">
+          
 
-hljs.initHighlightingOnLoad()
+          
+            <div class="next-post">
+              <a href="https://jojojonan.github.io/post/ppn-blockchain-web-design-project">
+                <h3 class="post-title">
+                  PPN Blockchain Web Design Project
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'bb09af80d68517997922',
+    clientSecret: 'e73179a879a71cc6ba21a417df7a92ddcb517a75',
+    repo: 'jojojonan.github.io',
+    owner: 'jojojonan',
+    admin: ['jojojonan'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
 
 </script>
 
+          
 
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://jojojonan.github.io/media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
   
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
-
-      var gitalk = new Gitalk({
-        clientID: 'bb09af80d68517997922',
-        clientSecret: 'e73179a879a71cc6ba21a417df7a92ddcb517a75',
-        repo: 'jojojonan.github.io',
-        owner: 'jojojonan',
-        admin: ['jojojonan'],
-        id: location.pathname,      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
-
-
-
-
   </body>
 </html>
