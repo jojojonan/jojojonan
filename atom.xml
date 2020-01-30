@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jojojonan.github.io</id>
     <title>Newloud</title>
-    <updated>2019-08-23T18:01:21.484Z</updated>
+    <updated>2020-01-30T06:41:23.411Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jojojonan.github.io"/>
     <link rel="self" href="https://jojojonan.github.io/atom.xml"/>
@@ -10,7 +10,30 @@
 这里是江南的设计自耕田</subtitle>
     <logo>https://jojojonan.github.io/images/avatar.png</logo>
     <icon>https://jojojonan.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, Newloud</rights>
+    <rights>All rights reserved 2020, Newloud</rights>
+    <entry>
+        <title type="html"><![CDATA[《做设计》摘抄（不定期更新）]]></title>
+        <id>https://jojojonan.github.io/post/zuo-she-ji</id>
+        <link href="https://jojojonan.github.io/post/zuo-she-ji">
+        </link>
+        <updated>2020-01-30T06:39:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近在读杨明洁的《做设计》，做一些摘抄。<br>
+我认为无论工业设计还是互联网设计，设计上的感悟是相通的，阅读其他行业的设计文章同样有助于构建我的设计体系。读过半本非常欣喜，也许工业设计师比互联网设计师有更加纯粹成熟的思考。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近在读杨明洁的《做设计》，做一些摘抄。<br>
+我认为无论工业设计还是互联网设计，设计上的感悟是相通的，阅读其他行业的设计文章同样有助于构建我的设计体系。读过半本非常欣喜，也许工业设计师比互联网设计师有更加纯粹成熟的思考。</p>
+<!-- more -->
+<p><strong>摘抄：</strong></p>
+<p>极简的结果背后是复杂的逻辑推理过程，需要不断地选择、再选择，做减法、再做减法。很多时候能够拥有不代表应该拥有，我们拥有的东西中大部分是没有意义的。在这个时候，选择放弃比选择拥有艰难，也更需要充满智慧。这样的过程无论对于做人、做设计师，还是做设计，都是同样适用的。</p>
+<p>每个城市的大商场大同小异，散发着强烈的全球化之后同质化的无聊感。</p>
+<p>仿制的过程是由表及里的，与创新的过程是逆向的，很多时候并不知道这样的形态因何而来，只是模仿最终的结果，长此以往便丧失了从源头开始创新的能力。</p>
+<p>近现代太多的战乱、贫穷与饥饿，让我们的内心充满不安全感，即使现在物质上已经富裕，内心依然贫乏，需要表面的喧嚣与繁琐来填补，我们希望通过占有更多的东西来消除这种不安全感。我们害怕表面看似<br>
+“一穷二白”的极简</p>
+<p>为了政治的权利与意志进行设计，产生出具有恐怖感的强大力量，让参与其中的人获得一种强烈的自豪感与身份认同，这是一个经典的，但同时又是值得我们警醒的案例。</p>
+<p>为什么对于一个成熟的品牌而言，品牌识别性尤为重要？其实这就像一个人的成长过程，在孩童和青年时期，我们会尝试各种不同的风格。而当我们的价值观与审美慢慢成熟与稳定后，我们的言谈举止、着装打扮也会趋向一种相对固定的风格或模式，而周边的人对于你的认知也会慢慢固化成某一种印象。如果某一天突然发生外在的改变，那么人们一定感到意外。<br>
+一个品牌也是一样，一个成熟的品牌一定会有与其他品牌存在差异的价值观与美学主张，便是产品的品牌识别性。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Web 计算器小组件优化]]></title>
         <id>https://jojojonan.github.io/post/web-ji-suan-qi-xiao-zu-jian-you-hua</id>
@@ -22,34 +45,34 @@
 18年在做 web 产品的时候遇到了一个计算器组件改版需求，下面是我的改版思路。</p>
 <h1 id="02-发现问题">02 发现问题</h1>
 <p>旧版计算器如图。<br>
-<img src="https://jojojonan.github.io/post-images/1551612886222.png" alt=""><br>
+<img src="https://jojojonan.github.io/post-images/1551612886222.png" alt="" loading="lazy"><br>
 <em>旧版计算器</em></p>
 <p>旧版计算器的样式版本落后于当前的网站，输入框、滑柄等控件风格陈旧。<br>
-<img src="https://jojojonan.github.io/post-images/1551613114264.png" alt=""><br>
+<img src="https://jojojonan.github.io/post-images/1551613114264.png" alt="" loading="lazy"><br>
 <em>旧版计算器的问题</em></p>
 <h1 id="03-改版探索">03 改版探索</h1>
 <p>参考了几个交易所网站的计算器，但观察后发现，这些网站的计算器各式各样，都是根据自家产品订制的，没有统一的解决方法。<br>
-<img src="https://jojojonan.github.io/post-images/1551613199041.png" alt=""><br>
+<img src="https://jojojonan.github.io/post-images/1551613199041.png" alt="" loading="lazy"><br>
 <em>竞品网站的计算器并没有统一解法</em></p>
 <p>接下来思考如何从视觉上改版。<br>
 提取“主站”的视觉元素：</p>
 <ul>
 <li>纵向标签</li>
 <li>更现代的输入框、滑柄等控件<br>
-<img src="https://jojojonan.github.io/post-images/1551613281384.png" alt=""><br>
+<img src="https://jojojonan.github.io/post-images/1551613281384.png" alt="" loading="lazy"><br>
 <em>提取主站的视觉元素</em></li>
 </ul>
 <p>使用纵向 tab，合并 “Side” 一行到输入区域，简化了区域划分且更符合逻辑。<br>
-<img src="https://jojojonan.github.io/post-images/1551613335572.png" alt=""><br>
-<img src="https://jojojonan.github.io/post-images/1551613343941.png" alt=""><br>
+<img src="https://jojojonan.github.io/post-images/1551613335572.png" alt="" loading="lazy"><br>
+<img src="https://jojojonan.github.io/post-images/1551613343941.png" alt="" loading="lazy"><br>
 <em>重新布局</em></p>
 <h1 id="04-改版设计">04 改版设计</h1>
 <p>新的布局已经出来，接下来细化视觉。颜色沿用主站主视觉蓝色，增加了更亮和更浅的蓝色。使用和主站相同的表格样式和设计组件。<br>
-<img src="https://jojojonan.github.io/post-images/1551613438206.png" alt=""><br>
+<img src="https://jojojonan.github.io/post-images/1551613438206.png" alt="" loading="lazy"><br>
 <em>改版后的计算器，采用新布局和主站相同的设计组件</em></p>
 <h1 id="05-最终效果">05 最终效果</h1>
 <p>上图<br>
-<img src="https://jojojonan.github.io/post-images/1551613514199.gif" alt=""><br>
+<img src="https://jojojonan.github.io/post-images/1551613514199.gif" alt="" loading="lazy"><br>
 <em>最终版效果</em></p>
 <h1 id="06-总结">06 总结</h1>
 <p>在这次计算器小改版中我运用了设计体系的思维和方法，使改版迅速合理地完成。感谢 c 译版《设计体系》给我的启发。感谢你的阅读，欢迎转发。</p>
@@ -61,7 +84,7 @@
         <link href="https://jojojonan.github.io/post/ppn-blockchain-web-design-project">
         </link>
         <updated>2018-12-22T12:11:11.000Z</updated>
-        <content type="html"><![CDATA[<p><img src="https://jojojonan.github.io/post-images/1551616180424.jpg" alt=""></p>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://jojojonan.github.io/post-images/1551616180424.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
